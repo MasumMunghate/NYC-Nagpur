@@ -4,7 +4,8 @@ import testimonial2 from '../../assets/img/testimonial-2.jpg'
 import testimonial3 from '../../assets/img/testimonial-3.jpg'
 import React from 'react'
 
-import { default as WOW } from 'wowjs';
+// import WOW from 'wowjs';
+// import WOW from '../../lib/wow/wow'
 import '../../lib/animate/animate.css';
 import '../../index.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -15,10 +16,7 @@ import { Link } from "react-router-dom";
 
 
 const Service = () => {
-  useEffect(() => {
-    new WOW.WOW().init();
-  }, []);
-
+  
   const responsive = {
     0: {
       items: 1, 
