@@ -1,0 +1,276 @@
+/* figure {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  justify-items: stretch;
+  align-items: stretch;
+  gap: 2svmin;
+}
+
+img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media (min-width: 500px) {
+  figure {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  img:nth-of-type(11) {
+    grid-row: span 2 / auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  figure {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1svmin;
+  }
+  img:where(:nth-of-type(3), :nth-of-type(12)) {
+    grid-row: span 2 / auto;
+    grid-column: span 2 / auto;
+  }
+  img:nth-of-type(5) {
+    grid-column: span 2 / auto;
+  }
+  img:nth-of-type(15) {
+    grid-column: span 2 / auto;
+  }
+}
+
+.gallerySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.categoryButton {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.categoryButton:hover {
+  background-color: black;
+  color: white;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px; 
+  transition: padding 0.3s, background-color 0.3s;
+}
+
+.navIcon {
+  font-size: 1.5rem;
+ 
+  margin: 5px 15px;
+  cursor: pointer;
+}
+
+.modalContent {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modalContent img {
+  width: 100%;
+  height: auto;
+}
+
+.closeButton:hover,
+.navButton:hover {
+  background-color: #e53e3e;
+  padding: 5px;
+}
+ */
+
+
+ figure {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  justify-items: stretch;
+  align-items: stretch;
+  gap: 2vw;
+}
+
+img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media (min-width: 500px) {
+  figure {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  img:nth-of-type(11) {
+    grid-row: span 2 / auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  figure {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
+  }
+  img:where(:nth-of-type(3), :nth-of-type(12)) {
+    grid-row: span 2 / auto;
+    grid-column: span 2 / auto;
+  }
+  img:nth-of-type(5) {
+    grid-column: span 2 / auto;
+  }
+  img:nth-of-type(15) {
+    grid-column: span 2 / auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .modalContent {
+    max-width: 100%;
+    max-height: 95%;
+  }
+
+  .closeButton {
+    top: 10px;
+    right: 10px;
+    font-size: 2.5rem;
+  }
+
+  .navButton {
+    padding: 5px;
+  }
+
+  .navIcon {
+    font-size: 1rem;
+    margin: 5px 10px;
+  }
+}
+
+.gallerySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.categoryButton {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.categoryButton:hover {
+  background-color: black;
+  color: white;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: padding 0.3s, background-color 0.3s;
+}
+
+.closeButton:hover {
+  background-color: #e53e3e;
+  padding: 5px;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: padding 0.3s, background-color 0.3s;
+}
+
+.navButton:hover {
+  background-color: #e53e3e;
+}
+
+.navIcon {
+  font-size: 1.5rem;
+  margin: 5px 15px;
+  cursor: pointer;
+}
+
+.modalContent {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modalContent img {
+  width: 100%;
+  height: auto;
+}
