@@ -58,10 +58,10 @@ const Footer = () => {
                   <Link to="#">
                     <i className="fas fa-angle-right me-2"></i> Contact us
                   </Link>
-                  <Link to="#">
+                  {/* <Link to="#">
                     <i className="fas fa-angle-right me-2"></i> Terms &
                     Conditions
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               
@@ -120,10 +120,10 @@ const Footer = () => {
                     <p className="text-white mb-0">10.00 am to 05.00 pm</p>
                   </div>
                   <div className="mb-3">
-                    <h6 className="text-muted mb-0">Vacation:</h6>
-                    <p className="text-white mb-0">
+                    {/* <h6 className="text-muted mb-0">Vacation:</h6> */}
+                    {/* <p className="text-white mb-0">
                       All Sunday is our vacation
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>
@@ -136,7 +136,7 @@ const Footer = () => {
               <div className="col-md-6 text-center text-md-start mb-md-0">
                 <span className="text-body">
                   <Link to="#" className="border-bottom text-white">
-                    <i className="fas fa-copyright text-light me-2"></i>
+                    {/* <i className="fas fa-copyright text-light me-2"></i> */}
                     Copyright © 2024 Eliora Pvt. Ltd | <span>All right reserved.</span>
                   </Link>
                   

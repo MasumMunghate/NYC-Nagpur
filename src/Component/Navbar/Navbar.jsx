@@ -45,87 +45,57 @@
 
 // export default Navbar
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Toggle from "../Toggle/Toggle";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../../assets/img/nyc logo (1).png";
 import { IoClose } from "react-icons/io5";
+// import ScrollToTop from "../ScrollToTop/ScrollToTop";
+import { scrollToTop } from "../ScrollToTop/ScrollToTop";
 
 const Navbar = () => {
+  const location = useLocation();
+
+  const getNavLinkClass = (path) => {
+    return location.pathname === path
+      ? "nav-item nav-link active text-red-500"
+      : "nav-item nav-link";
+  };
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalToggle = () => {
     setIsModalOpen(!isModalOpen);
+    scrollToTop();
+    handleNavLinkClick()
   };
 
+  const navbarCollapseRef = useRef(null);
+
+  const handleNavLinkClick = () => {
+    if (navbarCollapseRef.current.classList.contains('show')) {
+      navbarCollapseRef.current.classList.remove('show');
+    }
+  };
   return (
     <>
       <div className="mx-10">
         <Toggle />
       </div>
       {/* Navbar Start */}
-      {/* <div
-        className="container-fluid nav-bar sticky-top px-0 px-lg-4 py-1 py-lg-0"
-        style={{ maxWidth: "100%" }}
-      >
-        <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-light">
-            <img
-              src={Logo}
-              alt="NYC LOGO"
-              className="img-fluid navbar-brand p-0 navbar-brand p-0 tw-w-20 tw-h-fit tw-mt-5 md:tw-w-30 md:tw-h-fit md:tw-ml-20 tw-object-contain"
-            
-            />
 
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarCollapse"
-            >
-              <span className="fa fa-bars"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarCollapse">
-              <div className="navbar-nav tw-w-fit tw-mx-auto py-0">
-                <Link to="/" className="nav-item nav-link active">
-                  Home
-                </Link>
-                <Link to="/about" className="nav-item nav-link">
-                  About
-                </Link>
-                <Link to="/services" className="nav-item nav-link">
-                  Service
-                </Link>
-                <Link to="/gallery" className="nav-item nav-link">
-                  Gallery
-                </Link>
-                <Link to="/contact" className="nav-item nav-link">
-                  Contact
-                </Link>
-              </div>
-              <button
-                className="btn btn-primary rounded-pill py-1 px-3 tw-mx-10"
-                onClick={handleModalToggle}
-              >
-                Book Appointment
-              </button>
-            </div>
-          </nav>
-        </div>
-      </div> */}
-      <div
-        className="container-fluid nav-bar sticky-top "
-        // style={{ maxWidth: "100%" }}
-      >
+      <div className="container-fluid nav-bar sticky-top ">
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light">
-            <Link to='/' >
-            <img
-              src={Logo}
-              alt="NYC LOGO"
-              className="img-fluid navbar-brand p-0 tw-w-auto tw-h-auto md:max-w-100 md:h-auto"
-              style={{ padding: "5px", height:'65px' ,width:'80px'}} />
-</Link>
+            <Link to="/" onClick={scrollToTop}>
+              <img
+               onClick={handleNavLinkClick}
+                src={Logo}
+                alt="NYC LOGO"
+                className="img-fluid navbar-brand p-0 tw-w-auto tw-h-auto md:max-w-100 md:h-auto"
+                style={{ padding: "5px", height: "65px", width: "80px" }}
+              />
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -134,21 +104,21 @@ const Navbar = () => {
             >
               <span className="fa fa-bars"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarCollapse">
+            <div className="collapse navbar-collapse" id="navbarCollapse"  ref={navbarCollapseRef}>
               <div className="navbar-nav tw-w-fit tw-mx-auto py-0">
-                <Link to="/" className="nav-item nav-link active">
+                <Link to="/" className={getNavLinkClass("/")}  onClick={handleNavLinkClick}>
                   Home
                 </Link>
-                <Link to="/about" className="nav-item nav-link">
+                <Link to="/about" className={getNavLinkClass("/about")}  onClick={handleNavLinkClick}>
                   About
                 </Link>
-                <Link to="/services" className="nav-item nav-link">
+                <Link to="/services" className={getNavLinkClass("/services")}  onClick={handleNavLinkClick}>
                   Service
                 </Link>
-                <Link to="/gallery" className="nav-item nav-link">
+                <Link to="/gallery" className={getNavLinkClass("/gallery")}  onClick={handleNavLinkClick}>
                   Gallery
                 </Link>
-                <Link to="/contact" className="nav-item nav-link">
+                <Link to="/contact" className={getNavLinkClass("/contact")}  onClick={handleNavLinkClick}>
                   Contact
                 </Link>
               </div>

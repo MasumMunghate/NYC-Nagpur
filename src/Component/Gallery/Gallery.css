@@ -190,7 +190,7 @@ img {
   align-items: center;
   width: 90%;
   margin: auto;
-  padding: 20px;
+  padding: 10px;
 }
 
 .buttonContainer {
@@ -231,7 +231,7 @@ img {
 
 .closeButton {
   position: absolute;
-  top: 20px;
+  top: 90px;
   right: 30px;
   font-size: 3.5rem;
   color: white;
@@ -244,7 +244,8 @@ img {
 
 .closeButton:hover {
   background-color: #e53e3e;
-  padding: 5px;
+  padding: 1px ,5px;
+  height: fit-content;
 }
 
 .navButton {

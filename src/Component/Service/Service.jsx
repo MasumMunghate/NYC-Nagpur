@@ -13,6 +13,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import OwlCarousel from 'react-owl-carousel';
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import ServiceComponent from "../../SubComponent/ServiceComponent";
 
 
 const Service = () => {
@@ -63,7 +64,7 @@ const Service = () => {
      
       {/* NYC Services Section */}
 
-      <div className="container-fluid service py-5">
+      {/* <div className="container-fluid service py-5">
         <div className="container py-5">
           <div
             className="text-center mx-auto pb-5 wow fadeInUp"
@@ -165,7 +166,8 @@ AutoMechanica is an expert in car body repair and collision repair for all types
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <ServiceComponent/>
 
     {/* Testimonial */}
     <div className="container-fluid testimonial py-5">

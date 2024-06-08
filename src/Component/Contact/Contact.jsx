@@ -61,7 +61,7 @@ const Contact = () => {
               <div className="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
                 <div className="contact-add-item p-4">
                   <div className="contact-icon mb-4">
-                    <i className="fa fa-phone-alt fa-2x"></i>
+                    <i className="fa fa-phone-alt fa-2x tw-text-white"></i>
                   </div>
                   <div>
                     <h4>Telephone</h4>
@@ -73,7 +73,7 @@ const Contact = () => {
               <div className="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
                 <div className="contact-add-item p-4">
                   <div className="contact-icon mb-4">
-                    <i className="fab fa-firefox-browser fa-2x"></i>
+                    <i className="fab fa-firefox-browser fa-2x tw-text-white"></i>
                   </div>
                   <div>
                     <h4>sales@elioratechnologies.co</h4>
@@ -173,7 +173,7 @@ const Contact = () => {
                 </div>
                 <div className="d-flex align-items-center">
                   <p className="mb-0 text-dark me-2">Telephone:</p>
-                  <i className="fa fa-phone-alt text-primary me-2"></i>
+                  <i className="fa fa-phone-alt text-primary me-2 "></i>
                   <p className="mb-0">(+012) 3456 7890</p>
                 </div>
               </div>

@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import GalleryData from "./GalleryData";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -67,11 +65,9 @@ const Gallery = () => {
             data-wow-delay="0.3s"
           >
             <li className="breadcrumb-item">
-              <Link to='/'>
-              Home
-              </Link>
+              <Link to="/">Home</Link>
             </li>
-           
+
             <li className="breadcrumb-item active text-primary">Gallery</li>
           </ol>
         </div>
@@ -107,14 +103,14 @@ const Gallery = () => {
         {selectedImage && (
           <div className="modal">
             <button
-              className="closeButton bg-red-600"
+              className="closeButton bg-red-600 tw-h-auto"
               onClick={closeModal}
             >
               &times;
             </button>
             <button
               onClick={() => handleChangePre()}
-              className="navButton bg-red-600"
+              className="navButton bg-red-600 tw-text-white"
             >
               <FaChevronLeft className="navIcon" />
             </button>
@@ -123,13 +119,15 @@ const Gallery = () => {
             </div>
             <button
               onClick={() => handleChangenext()}
-              className="navButton bg-red-600"
+              className="navButton bg-red-600 tw-text-white"
             >
               <FaChevronRight className="navIcon" />
             </button>
           </div>
         )}
       </div>
+
+
     </>
   );
 };

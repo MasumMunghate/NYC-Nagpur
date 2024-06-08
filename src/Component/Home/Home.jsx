@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "../../SubComponent/Carousel";
 import CentalFeature from "../../SubComponent/CentalFeature";
 import OurWork from "../../SubComponent/OurWork";
@@ -12,9 +12,27 @@ import factBg from "../../assets/img/fact-bg.jpg";
 import HowItWork from "../../SubComponent/HowItWork";
 import VehicalCategory from "../../SubComponent/VehicalCategory";
 import CarCategory from "../../SubComponent/CarCategory";
-import Banner1 from '../../assets/img/banner-1.jpg'
+import Banner1 from "../../assets/img/banner-1.jpg";
+import ServiceComponent from "../../SubComponent/ServiceComponent";
+
 
 const Home = () => {
+  const [expandedCards, setExpandedCards] = useState({});
+
+  const toggleExpand = (index) => {
+    setExpandedCards((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
+  const truncateText = (text, wordLimit) => {
+    const words = text.split(' ');
+    if (words.length > wordLimit) {
+      return words.slice(0, wordLimit).join(' ') + '...';
+    }
+    return text;
+  };
   return (
     <>
       <Carousel />
@@ -29,7 +47,13 @@ const Home = () => {
                     About <span className="text-primary">NYC</span>
                   </h1>
                   <p className="mb-0 tw-text-gray-700">
-                  <span className="tw-font-bold">NYC</span> mission is to enable premium quality care for your luxury car service at affordable pricing . We ensure real time updates for complete car care needs with a fair and transparent pricing mechanism. Skilled technicians, working at our state of the art German technology workshop further ensure that only genuine OEM parts are used for your car care needs.
+                    <span className="tw-font-bold">NYC</span> mission is to
+                    enable premium quality care for your luxury car service at
+                    affordable pricing . We ensure real time updates for
+                    complete car care needs with a fair and transparent pricing
+                    mechanism. Skilled technicians, working at our state of the
+                    art German technology workshop further ensure that only
+                    genuine OEM parts are used for your car care needs.
                   </p>
                 </div>
                 <div className="row g-4">
@@ -65,7 +89,12 @@ const Home = () => {
                   </div>
                 </div>
                 <p className="text-item my-4 tw-text-gray-700">
-                Customer satisfaction is the core of all initiatives at NYC. Online appointment scheduling with door-step, same day pick-up and drop anywhere in Pune is our constant endeavor to maximize customer convenience. Our commitment stands for reliability and unequalled professionalism to provide dealer quality auto-service at a fair price.
+                  Customer satisfaction is the core of all initiatives at NYC.
+                  Online appointment scheduling with door-step, same day pick-up
+                  and drop anywhere in Pune is our constant endeavor to maximize
+                  customer convenience. Our commitment stands for reliability
+                  and unequalled professionalism to provide dealer quality
+                  auto-service at a fair price.
                 </p>
                 <div className="row g-4">
                   <div className="col-lg-6">
@@ -142,7 +171,10 @@ const Home = () => {
       </div>
 
       {/* Happy Clint */}
-      <div className="container-fluid counter py-5 " style={{ ...aboutBackImg }}>
+      <div
+        className="container-fluid counter py-5 "
+        style={{ ...aboutBackImg }}
+      >
         <div className="container py-5 ">
           <div className="row g-5 ">
             <div
@@ -231,7 +263,7 @@ const Home = () => {
       <CentalFeature />
 
       {/* NYC Services Section */}
-      <div className="container-fluid service py-5">
+      {/* <div className="container-fluid service py-5">
         <div className="container py-5">
           <div
             className="text-center mx-auto pb-5 wow fadeInUp"
@@ -242,7 +274,10 @@ const Home = () => {
               NYC <span className="text-primary">Services</span>
             </h1>
             <p className="mb-0  tw-font-bold">
-            Wear and tear in your vehicle is unavoidable, and it would usually have a finite life span before eventually being retired from operations. The good news is, your vehicle doesn’t just go end-of-life overnight.Periodic maintenance requires maintenance tasks to be performed at set time intervals while your vehicle is operational. Periodic maintenance services are planned ahead of time and are performed regardless of whether signs of deterioration show up or not.
+              Wear and tear in your vehicle is unavoidable, and it would usually
+              have a finite life span before eventually being retired from
+              operations. The good news is, your vehicle doesn’t just go
+              end-of-life overnight.
             </p>
           </div>
           <div className="row g-4">
@@ -256,8 +291,13 @@ const Home = () => {
                 </div>
                 <h5 className="mb-3  tw-font-bold">Dent & Paint</h5>
                 <p className="mb-0 tw-text-gray-700">
-                Our technicians at AutoMechanica take immense pride in the quality of our work and in caring for your vehicle. All products and services used at our service center are of the highest quality to ensure the proper paint texture, gloss, and finish is rendered to your car.
+                  Our technicians at AutoMechanica take immense pride in the
+                  quality of our work and in caring for your vehicle. All
+                  products and services used at our service center are of the
+                  highest quality to ensure the proper paint texture, gloss, and
+                  finish is rendered to your car.
                 </p>
+              <button className="tw-text-red-600" onClick={()=>readMorefun()}>Read more. . .</button>
               </div>
             </div>
             <div
@@ -270,8 +310,14 @@ const Home = () => {
                 </div>
                 <h5 className="mb-3  tw-font-bold">Bumper Repair</h5>
                 <p className="mb-0 tw-text-gray-700">
-                Plastic bumpers don’t always need replacement when damage happens. Instead, they can be saved and even retrieved with innovative auto reconditioning techniques. Our expert technicians can repair scuffed, scratched, dented, detached, and torn bumpers for much less than the cost of replacement. We offer same-day service, and we guarantee your satisfaction!
+                  Plastic bumpers don’t always need replacement when damage
+                  happens. Instead, they can be saved and even retrieved with
+                  innovative auto reconditioning techniques. Our expert
+                  technicians can repair scuffed, scratched, dented, detached,
+                  and torn bumpers for much less than the cost of replacement.
+                  We offer same-day service, and we guarantee your satisfaction!
                 </p>
+                <button className="tw-text-red-600" onClick={()=>readMorefun()}>Read more. . .</button>
               </div>
             </div>
             <div
@@ -284,9 +330,12 @@ const Home = () => {
                 </div>
                 <h5 className="mb-3  tw-font-bold">Accidental Repair</h5>
                 <p className="mb-0 tw-text-gray-700">
-                
-AutoMechanica is an expert in car body repair and collision repair for all types of cars. Our body shop guarantees the best professional services in town. We have established a reputation, and many insurers respect us. 
+                  AutoMechanica is an expert in car body repair and collision
+                  repair for all types of cars. Our body shop guarantees the
+                  best professional services in town. We have established a
+                  reputation, and many insurers respect us.
                 </p>
+                <button className="tw-text-red-600" onClick={()=>readMorefun()}>Read more. . .</button>
               </div>
             </div>
             <div
@@ -299,8 +348,13 @@ AutoMechanica is an expert in car body repair and collision repair for all types
                 </div>
                 <h5 className="mb-3  tw-font-bold">Scratch Removal</h5>
                 <p className="mb-0 tw-text-gray-700">
-                Our technicians at AutoMechanica take immense pride in the quality of our work and in caring for your vehicle. All products and services used at our service center are of the highest quality to ensure the proper paint texture, gloss, and finish is rendered to your car.
+                  Our technicians at AutoMechanica take immense pride in the
+                  quality of our work and in caring for your vehicle. All
+                  products and services used at our service center are of the
+                  highest quality to ensure the proper paint texture, gloss, and
+                  finish is rendered to your car.
                 </p>
+                <button className="tw-text-red-600" onClick={()=>readMorefun()}>Read more. . .</button>
               </div>
             </div>
             <div
@@ -313,8 +367,11 @@ AutoMechanica is an expert in car body repair and collision repair for all types
                 </div>
                 <h5 className="mb-3  tw-font-bold">Engine Repairs</h5>
                 <p className="mb-0 tw-text-gray-700">
-                Your engine light is an indication that something on your car needs attention. Your car may have some issues, and it’s time to take it to a service center.
+                  Your engine light is an indication that something on your car
+                  needs attention. Your car may have some issues, and it’s time
+                  to take it to a service center.
                 </p>
+                <button className="tw-text-red-600" onClick={()=>readMorefun()}>Read more. . .</button>
               </div>
             </div>
             <div
@@ -327,38 +384,94 @@ AutoMechanica is an expert in car body repair and collision repair for all types
                 </div>
                 <h5 className="mb-3 tw-font-bold">Suspension Repairs</h5>
                 <p className="mb-0 tw-text-gray-700">
-                The suspension system of your vehicle protects you from bouncing up and down due to the bad road conditions and bumps in the road. More importantly, it affects your steering ability, and that can mean the difference between life and death.
+                  The suspension system of your vehicle protects you from
+                  bouncing up and down due to the bad road conditions and bumps
+                  in the road. More importantly, it affects your steering
+                  ability, and that can mean the difference between life and
+                  death.
                 </p>
+                <button className="tw-text-red-600" onClick={()=>readMorefun()}>Read more. . .</button>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <CarCategory/>
+{/* <div className="container-fluid service py-5">
+      <div className="container py-5">
+        <div
+          className="text-center mx-auto pb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style={{ maxWidth: '800px' }}
+        >
+          <h1 className="display-5 text-capitalize mb-3">
+            NYC <span className="text-primary">Services</span>
+          </h1>
+          <p className="mb-0 tw-font-bold">
+            Wear and tear in your vehicle is unavoidable, and it would usually
+            have a finite life span before eventually being retired from
+            operations. The good news is, your vehicle doesn’t just go
+            end-of-life overnight.
+          </p>
+        </div>
+        <div className="row g-4">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="col-md-6 col-lg-4 wow fadeInUp"
+              data-wow-delay={`${0.1 * (index % 3)}s`}
+            >
+              <div className="service-item p-4">
+                <div className="service-icon mb-4">
+                  <i className={`fa ${service.icon} fa-2x tw-text-white`}></i>
+                </div>
+                <h5 className="mb-3 tw-font-bold">{service.title}</h5>
+                <p className="mb-0 tw-text-gray-700">
+                  {expandedCards[index]
+                    ? service.description
+                    : truncateText(service.description, 16)}
+                </p>
+                <button
+                  className="tw-text-red-600"
+                  onClick={() => toggleExpand(index)}
+                >
+                  {expandedCards[index] ? 'Read less' : 'Read more'}
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div> */}
+
+    <ServiceComponent/>
+
+      <CarCategory />
 
       {/* <VehicalCategory/> */}
       <OurWork />
 
       {/* Book Your Slot */}
       <div class="container banner mt-5 wow zoomInDown" data-wow-delay="0.1s">
-            <div class="container pb-5">
-                <div class="banner-item rounded">
-                    <img src={Banner1} class="img-fluid rounded w-100" alt=""/>
-                    <div class="banner-content">
-                        <h2 class="text-primary">Your Car is our Hand</h2>
-                        <h1 class="text-white">Book Your Car Today</h1>
-                        <p class="text-white">Don't hesitate and send us a message.</p>
-                        <div class="banner-btn">
-                            <Link to='/contact' class="btn btn-primary rounded-pill md:py-3 md:px-4 py-2 px-3 px-md-5 ms-2 ">
-                            Contact Us
-                            </Link>
-                            
-                        </div>
-                    </div>
-                </div>
+        <div class="container pb-5">
+          <div class="banner-item rounded">
+            <img src={Banner1} class="img-fluid rounded w-100" alt="" />
+            <div class="banner-content">
+              <h2 class="text-primary">Your Car is our Hand</h2>
+              <h1 class="text-white">Book Your Car Today</h1>
+              <p class="text-white">Don't hesitate and send us a message.</p>
+              <div class="banner-btn">
+                <Link
+                  to="/contact"
+                  class="btn btn-primary rounded-pill md:py-3 md:px-4 py-2 px-3 px-md-5 ms-2 "
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </>
   );
 };
@@ -372,3 +485,43 @@ const aboutBackImg = {
   backgroundRepeat: "no-repeat",
   bacgroundColor: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))",
 };
+
+
+const services = [
+  {
+    title: 'Dent & Paint',
+    icon: 'fa-phone-alt',
+    description:
+      'Our technicians at AutoMechanica take immense pride in the quality of our work and in caring for your vehicle. All products and services used at our service center are of the highest quality to ensure the proper paint texture, gloss, and finish is rendered to your car.',
+  },
+  {
+    title: 'Bumper Repair',
+    icon: 'fa-money-bill-alt',
+    description:
+      'Plastic bumpers don’t always need replacement when damage happens. Instead, they can be saved and even retrieved with innovative auto reconditioning techniques. Our expert technicians can repair scuffed, scratched, dented, detached, and torn bumpers for much less than the cost of replacement. We offer same-day service, and we guarantee your satisfaction!',
+  },
+  {
+    title: 'Accidental Repair',
+    icon: 'fa-road',
+    description:
+      'AutoMechanica is an expert in car body repair and collision repair for all types of cars. Our body shop guarantees the best professional services in town. We have established a reputation, and many insurers respect us.',
+  },
+  {
+    title: 'Scratch Removal',
+    icon: 'fa-umbrella',
+    description:
+      'Our technicians at AutoMechanica take immense pride in the quality of our work and in caring for your vehicle. All products and services used at our service center are of the highest quality to ensure the proper paint texture, gloss, and finish is rendered to your car.',
+  },
+  {
+    title: 'Engine Repairs',
+    icon: 'fa-building',
+    description:
+      'Your engine light is an indication that something on your car needs attention. Your car may have some issues, and it’s time to take it to a service center.',
+  },
+  {
+    title: 'Suspension Repairs',
+    icon: 'fa-car-alt',
+    description:
+      'The suspension system of your vehicle protects you from bouncing up and down due to the bad road conditions and bumps in the road. More importantly, it affects your steering ability, and that can mean the difference between life and death.',
+  },
+];
