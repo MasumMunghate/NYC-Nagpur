@@ -4,7 +4,7 @@ import testimonial2 from '../../assets/img/testimonial-2.jpg'
 import testimonial3 from '../../assets/img/testimonial-3.jpg'
 import React from 'react'
 
-import WOW from 'wowjs';
+import { default as WOW } from 'wowjs';
 import '../../lib/animate/animate.css';
 import '../../index.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
