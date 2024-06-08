@@ -48,7 +48,7 @@
 import React, { useState } from "react";
 import Toggle from "../Toggle/Toggle";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/img/nyc logo.png";
+import Logo from "../../assets/img/nyc logo (1).png";
 import { IoClose } from "react-icons/io5";
 
 const Navbar = () => {
@@ -119,12 +119,13 @@ const Navbar = () => {
       >
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light">
+            <Link to='/' >
             <img
               src={Logo}
               alt="NYC LOGO"
               className="img-fluid navbar-brand p-0 tw-w-auto tw-h-auto md:max-w-100 md:h-auto"
-              style={{ maxWidth: "100px", height: "73px", padding: "5px" }}/>
-
+              style={{ padding: "5px", height:'65px' ,width:'80px'}} />
+</Link>
             <button
               className="navbar-toggler"
               type="button"

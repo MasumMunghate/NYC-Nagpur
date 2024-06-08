@@ -17,7 +17,7 @@ const Footer = () => {
                 <img  src={NYCLOGO}
               alt="NYC LOGO"
               className="img-fluid navbar-brand p-0 tw-w-auto tw-h-auto md:max-w-100 md:h-auto"
-              style={{ maxWidth: "100px", height: "75px", padding: "6px" }}  />
+              style={{ maxWidth: "100px", height: "95px", padding: "6px" }}  />
                   <div className="footer-item">
                    
                     
@@ -137,7 +137,7 @@ const Footer = () => {
                 <span className="text-body">
                   <Link to="#" className="border-bottom text-white">
                     <i className="fas fa-copyright text-light me-2"></i>
-                    Copyright © 2024 Eliora Pvt. Ltd | <span>, All right reserved.</span>
+                    Copyright © 2024 Eliora Pvt. Ltd | <span>All right reserved.</span>
                   </Link>
                   
                 </span>
